@@ -8,23 +8,29 @@ public class videoConsola {
     // Modelo de la consola
     private String modeloConsola;
 
-    public videoConsola(int porcentajeBateria, String modelo, boolean encendidoApagado ) {
+    public videoConsola(int porcentajeBateria, String modelo ) {
         cantidadBateria = porcentajeBateria;
         modeloConsola = modelo;
-        encendido = encendidoApagado;
+        encendido = true;
     }
 
     /**
      * Carga la bateria 
      */
-    public int cargaBateria() {
+    public void cargaBateria() {
         if (cantidadBateria < 100) {
             cantidadBateria = cantidadBateria + 10;
         }
         else {
             System.out.println("Bateria Completa ");
         }
-        return cantidadBateria;
+    }
+
+    /**
+     *cambiar moelo 
+     */
+    public void cambiarModelo(String nuevoModelo) {
+        modeloConsola = nuevoModelo;
     }
 
     /**
@@ -33,11 +39,26 @@ public class videoConsola {
     public String modeloDeConsola() {
         return modeloConsola;
     }
-
+    
     /**
-     * Dice si la consola esta encendida o no
+     * Devuelve la bateria
      */
-    public void consolaEncendida() {
+    public int getBateria() {
+        return cantidadBateria;
+    }
+    /**
+     * Devuelve si la consola esta encendida
+     */
+    public boolean getEncendido() {
+        return encendido;
+    }
+    
+    /**
+     * Dice la informacion
+     */
+    public void informacion() {
+        System.out.println("El modelo de la consola es " + modeloConsola);
+        System.out.println("La cantidad de bateria es " + cantidadBateria);
         if (encendido == true) {
             System.out.println("La consola esta encendida ");
         }
@@ -46,5 +67,11 @@ public class videoConsola {
         }
     }
 
-  
+    /**
+     * Devuelve la bateria
+     */
+    public String getInformacion() {
+        String estadisticas = "El modelo de la consola es " + modeloConsola + "La cantidad de bateria es " + cantidadBateria;
+        return estadisticas;
+    }
 } 
