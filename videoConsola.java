@@ -25,9 +25,16 @@ public class videoConsola {
             System.out.println("Bateria Completa ");
         }
     }
-
+    
     /**
-     *cambiar moelo 
+     *cambiar encendido 
+     */
+    public void cambiarEncendido(boolean nuevoEncendido) {
+        encendido = nuevoEncendido;
+    }
+    
+    /**
+     *cambiar modelo 
      */
     public void cambiarModelo(String nuevoModelo) {
         modeloConsola = nuevoModelo;
