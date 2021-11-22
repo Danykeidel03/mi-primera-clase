@@ -30,7 +30,12 @@ public class videoConsola {
      *cambiar encendido 
      */
     public void cambiarEncendido(boolean nuevoEncendido) {
-        encendido = nuevoEncendido;
+        if (encendido == true) {
+            encendido = false;
+        }
+        if (encendido == false) {
+            encendido = true;
+        }
     }
     
     /**
